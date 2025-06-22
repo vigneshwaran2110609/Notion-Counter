@@ -1,5 +1,7 @@
 package com.Project.NotionCounter.models;
 
+//used https://www.jsonschema2pojo.org/ to generate the POJO
+
 import java.util.List;
 import java.util.HashMap;
 import com.fasterxml.jackson.annotation.JsonProperty;

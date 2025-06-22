@@ -1,6 +1,7 @@
 package com.Project.NotionCounter.services;
 
 import org.springframework.stereotype.Service;
+import com.Project.NotionCounter.models.NotionData;
 
 @Service
 public class NotionCounterService {
@@ -14,7 +15,7 @@ public class NotionCounterService {
 	}
 	
 	public void decreaseCount() {
-		
+		NotionData notionData = this.notionDataGetService.getNotionData();
 		
 	}
 
