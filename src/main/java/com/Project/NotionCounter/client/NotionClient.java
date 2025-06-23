@@ -15,18 +15,18 @@ public class NotionClient {
 	private final RestTemplate restTemplate;
 	private final NotionConfig notionConfig;
 	
-	public NotionClient(NotionConfig config) {
+	public NotionClient(NotionConfig notionConfig) {
         this.restTemplate = new RestTemplate();
-        this.notionConfig = config;
+        this.notionConfig = notionConfig;
     }
 	
 	public NotionData getChildrenBlocks() {
         String url = String.format("https://api.notion.com/v1/blocks/%s/children?page_size=100",
-                notionConfig.getBlock().getId());
+                this.notionConfig.getBlock().getId());
 
         HttpHeaders headers = new HttpHeaders();
-        headers.setBearerAuth(notionConfig.getApi().getKey());
-        headers.set("Notion-Version", notionConfig.getApi().getVersion());
+        headers.setBearerAuth(this.notionConfig.getApi().getKey());
+        headers.set("Notion-Version", this.notionConfig.getApi().getVersion());
 
         HttpEntity<Void> entity = new HttpEntity<>(headers);
 
