@@ -21,7 +21,9 @@ public class NotionCounterService {
 		String num = this.numberGetService.extractNumberFromNotionData(notionData);
 		int num1 = Integer.parseInt(num);
 		String id = this.numberGetService.extractIdFromNotionData(notionData, num);
-		System.out.println(id);
+		num1 = num1 - 1;
+		String ns = Integer.toString(num1);
+		this.notionDataSendService.sendNotionData(id, ns);
 	}
 
 }
